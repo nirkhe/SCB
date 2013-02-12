@@ -1,1 +1,16 @@
-I am thinking of a chessboard with green rooks.
+The Chessboard (Physical) registers a move with the arduino which keeps the game time as well as display the name of the move and calculates the validity of the move. Maybe adds a beep or some sound to register proper move?
+
+Then the Arduino transfers the move to the web server and keeps a digital copy of the chessboard and then displays them on site. It also has options for saving (and downloading?) game. There is a PGN standard for saving chess game. Also from here you can send the game to Twiiter, although this idea should have been chosen before you are running. 
+
+Minutes of the conversation:
+
+Shum suggests an LCD screen and all starting and selection of Twitter (yes/no) should be from the Arduino. Questions to find: How to ping a server for a response?
+
+Plans for the week:
+
+Alec - Search other languages and construct a backend server for the website.
+Chinmay - Construct an appealing Website design (that is appealing and nice to look at)
+Shum - Will not attend Friday. I will choose something for you. Think about what you want doe.
+David - Check to see if Reed switches are the right option, what's the price.
+
+Think about the Glassford Queen capture conundrum.
