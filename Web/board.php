@@ -28,6 +28,13 @@
 				$squares[$i][8] = $this->build($i , 0);
 			}
 		}
+		
+		function move($file0 , $rank0 , $file , $rank)
+		{
+			$squares[$file][$rank] = $squares[$file0][$rank0];
+			$squares[$file0][$rank0] = null;
+		}
+		
 	}
 	
 	class piece
@@ -47,3 +54,17 @@
 	
 	$board = new board();
 ?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
+		<title>Sassy Chess Board</title>
+		<link rel = "stylesheet" type="text/css" href="style.css" media="screen"/>
+	</head>
+	<body>
+	<?php
+		mys
+	?>
+	</body>
+</html>
