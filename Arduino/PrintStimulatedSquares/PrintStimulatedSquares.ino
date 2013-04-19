@@ -28,11 +28,16 @@ void loop()
   {
    for (int rank = 1; rank<9; rank++)
     {
-     int val = readMux(file,rank);
-     if (val > 600)
-       Serial.println(file + rank + "=white");
-     else if (val <400)
-       Serial.println(file + rank + "=black");
+      file = 'a';
+      rank = 1;
+      int val = readMux(file,rank);
+     // if (val > 600 || val <400)
+      //{
+       Serial.print(file);
+         Serial.println(rank);
+         Serial.println(val);
+         Serial.println();
+      //}
     }
   }
 }
@@ -40,8 +45,8 @@ void loop()
 
 int readMux(char file , int rank)
 {
-  file = file - 'a';
-  
+
+  int numFile = (int)(file) - (int)('a');
   int muxChannel[16][4]=
   {
     {0,0,0,0}, //channel 0
@@ -65,9 +70,9 @@ int readMux(char file , int rank)
   //loop through the 4 sig
   for(int i = 0; i < 4; i ++)
   {
-    digitalWrite(boards[file/2][i+1], muxChannel[file%2*8+rank-1][i]);
+    digitalWrite(boards[numFile/2][i+1], muxChannel[numFile%2*8+rank-1][i]);
   }
-
+  delay(50);
   //read the value at the SIG pin
-  return analogRead(boards[file/2][0]);
+  return analogRead(boards[numFile/2][0]);
 }
